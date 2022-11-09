@@ -1,17 +1,20 @@
 body{
-    background-color: #355;
+    background: linear-gradient(rgba(51, 85, 85, 0.837), #05757f);
+    color:#ccc;
+    
 }
 
-#editor{
-    width: 80%;
-    height: 20vh;
-    border: 1px solid black;
-    background-color: #333; 
-    color:#ccc;
+body>h1{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.box-title{
+    font-size: 1.7rem;;
 }
 
 .dBox{
-    margin-top: 20vh;
+    margin-top: 4vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,19 +22,28 @@ body{
 
 }
 
+#editor{
+    width: 80%;
+    height: 20vh;
+    border: none;
+    background-color: #333; 
+    color: inherit;
+    border-radius: 20px;
+    padding: .7rem;    
+}    
+
+#editor::-webkit-scrollbar{
+    display: none;
+}
+    
 #preview{
-    background-color: #334;
+    background-color: #012f33b4;
     height: 20vh;
     width: 80%;
     height:fit-content;
     resize: both;
     overflow:auto;
     padding: 1rem;
-    border: 1px solid black;
-}
-
-.enlarged{
-    width: 100% !important;
-    height: 50vh !important;
-
+    border-radius: 1.5%;
+    /* border: 1px solid black; */
 }

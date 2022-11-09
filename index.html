@@ -23,9 +23,9 @@
     
     <div class="dBox">
 
-        <label for="editor">Markdown</label>
+        <label class="box-title" for="editor">Markdown</label>
 <!-- #region Markdown Preview---------------------------------------------------------------- -->
-        <textarea name="markdown-text" id="editor" cols="30" rows="50" >
+        <textarea name="markdown-text" id="editor" cols="30" rows="50" spellcheck="false">
 # This is a H1
 ## This is a H2
 [this is a link to freeCodeCamp](https://freeCodeCamp.org)
@@ -51,7 +51,7 @@ Here is a list
         </textarea>
 <!-- #end region Markdown Preview---------------------------------------------------------------- -->
 
-        <label for="preview">Preview</label>
+        <label class='box-title' for="preview">Preview</label>
         <div name="preview" id="preview" ></div>div>
     </div>
     <!-- End of markdown previewer -->
@@ -62,16 +62,16 @@ Here is a list
         3) use the marked library to parse the purified data from the input box and pass it into the previewer div's innerHTML attribute
     -->
     <script>
+
+        // The options for marked to use github format markdown and to convert line breaks
         const options = {
             gfm: true,
             breaks: true
         }
 
-
         // DOMPurify.sanitize(marked.parse(`<img src="x" onerror="alert('not happening')">`));
         window.onload = ()=>{
             $('#preview')[0].innerHTML = DOMPurify.sanitize(marked.parse( $('#editor')[0].textContent,options ));
-
         }
         
         $('#editor')[0].addEventListener('input',(e)=>{
