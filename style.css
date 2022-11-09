@@ -11,6 +11,7 @@ body{
 }
 
 .dBox{
+    margin-top: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,8 +20,14 @@ body{
 }
 
 #preview{
+    background-color: #334;
     height: 20vh;
     width: 80%;
+    height:fit-content;
+    resize: both;
+    overflow:auto;
+    padding: 1rem;
+    border: 1px solid black;
 }
 
 .enlarged{
