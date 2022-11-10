@@ -1,7 +1,9 @@
 body{
     background: linear-gradient(rgba(51, 85, 85, 0.837), #05757f);
     color:#ccc;
-    
+    height: 100vh;
+    margin: 0;
+    position: relative;
 }
 
 body>h1{
@@ -30,7 +32,16 @@ body>h1{
     color: inherit;
     border-radius: 20px;
     padding: .7rem;    
+    transition: height ease-in 2s;
+    transition: transform ease-in 2s;
 }    
+
+#editor:hover{
+    transform: translateY(-20%);
+    transition: ease .5s;
+    /* position: fixed; */
+    height: 40vh;
+}
 
 #editor::-webkit-scrollbar{
     display: none;
@@ -38,12 +49,20 @@ body>h1{
     
 #preview{
     background-color: #012f33b4;
-    height: 20vh;
-    width: 80%;
     height:fit-content;
     resize: both;
     overflow:auto;
     padding: 1rem;
     border-radius: 1.5%;
     /* border: 1px solid black; */
+    width: 80%;
+    height: 20vh;
+}
+
+#preview:hover{
+    
+    width: 85%;
+    height: 100%;
+    margin:0;
+    transition: ease-in-out .5s;
 }
