@@ -82,6 +82,22 @@ body>h1{
     width 1s ease-in 1s;
 }
 
+#preview img{
+    max-width: 90%;
+}
+
+#preview code{
+    background: #333;
+    display: block;
+    padding:.2rem;
+    border: 1px inset #333;
+    box-shadow: -2px 2px 5px 2px #222,
+                 2px 2px 5px 2px #222;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+
 #preview:hover{
     
     width: 85%;
