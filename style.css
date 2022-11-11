@@ -3,7 +3,7 @@ body{
     color:#ccc;
     height: 100vh;
     margin: 0;
-    position: relative;
+    /* position: relative; */
 }
 
 body>h1{
@@ -32,37 +32,47 @@ body>h1{
     color: inherit;
     border-radius: 20px;
     padding: .7rem;    
-    transition: height ease-in 2s;
-    transition: transform ease-in 2s;
+    transition: height 2s ease-in-out 1s,
+                transform 2s ease-out 1s;
+    
 }    
 
 #editor:hover{
-    transform: translateY(-20%);
-    transition: ease .5s;
+    transform: translateY(-2%);
+    /* transition: all ease 1s; */
+    transition: all 2s ease-in-out 2s;
     /* position: fixed; */
-    height: 40vh;
+    height: 30vh;
 }
+
 
 #editor::-webkit-scrollbar{
     display: none;
 }
-    
+
 #preview{
     background-color: #012f33b4;
-    height:fit-content;
+    /* height:fit-content; */
     resize: both;
     overflow:auto;
     padding: 1rem;
     border-radius: 1.5%;
     /* border: 1px solid black; */
     width: 80%;
-    height: 20vh;
+    height: 40vh;
+    margin:0;
+    transition: height 2s,
+    width 1s ease-in 1s;
 }
 
 #preview:hover{
     
     width: 85%;
     height: 100%;
-    margin:0;
-    transition: ease-in-out .5s;
+    /* transition: height 1s ease-in 1s; */
+    /* transition: height 3s ease 2s; */
+}
+
+#preview::-webkit-scrollbar{
+    display: none;
 }
