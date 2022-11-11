@@ -8,7 +8,7 @@ body{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    /* position: relative; */
+    position: relative;
 }
 /* important since we can have multiple h1's thanks to the MD conversion */
 body>h1{
@@ -61,9 +61,14 @@ body>h1{
     width: 85%;
 }
 
-
 #editor::-webkit-scrollbar{
     display: none;
+}
+
+footer{
+    margin-top: 2rem;
+    position: absolute;
+    bottom:0;
 }
 
 #preview{
@@ -80,6 +85,7 @@ body>h1{
     margin:0;
     transition: height 2s,
     width 1s ease-in 1s;
+    margin-bottom: 4rem;
 }
 
 #preview img{
