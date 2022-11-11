@@ -10,7 +10,8 @@ body{
     width: 100%;
     position: relative;
 }
-/* important since we can have multiple h1's thanks to the MD conversion */
+/* important since we can have multiple h1's thanks to the MD conversion 
+we only need the main one here...the first in the body*/
 body>h1{
     font-size: 3rem;
     text-align: center;
@@ -20,16 +21,20 @@ body>h1{
     width:fit-content;
 }
 
+body>button{
+    background-color: #05757f;
+    position: fixed;
+    right:0;
+}
+
 .box-title{
     font-size: 1.7rem;
-    
     text-decoration: underline solid 1px;
     text-underline-offset: 2px;
-    
 }
 
 .dBox{
-    margin-top: 4vh;
+    /* margin-top: 4vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,19 +52,10 @@ body>h1{
     border-radius: 20px;
     padding: .7rem;    
     box-sizing: border-box;
-    transition: height 2s ease-in-out 1s,
-                transform 2s ease-out 1s;
+    transition: height 2s ease-in-out 1s;
+                /* transform 2s ease-out 1s; */
     
 }    
-
-#editor:hover{
-    transform: translateY(-2%);
-    /* transition: all ease 1s; */
-    transition: all 2s ease-in-out 1s;
-    /* position: fixed; */
-    height: 40vh;
-    width: 85%;
-}
 
 #editor::-webkit-scrollbar{
     display: none;
@@ -82,7 +78,7 @@ footer{
     /* border: 1px solid black; */
     width: 80%;
     height: 40vh;
-    margin:0;
+    
     transition: height 2s,
     width 1s ease-in 1s;
     margin-bottom: 4rem;
@@ -104,14 +100,84 @@ footer{
 }
 
 
-#preview:hover{
-    
-    width: 85%;
-    height: 100%;
-    /* transition: height 1s ease-in 1s; */
-    /* transition: height 3s ease 2s; */
-}
-
 #preview::-webkit-scrollbar{
     display: none;
+}
+
+.vertical{
+    height:100% !important;
+    /* margin:0 !important; */
+    /* width:100% !important; */
+    
+   
+}
+
+.vertical-box{
+    display:flexbox !important;
+    justify-content: baseline !important;
+    min-height:100% !important;
+    width: 100% !important;
+    margin: auto 1rem !important;
+    gap:0;
+    
+}
+
+.grid-2{
+    display: grid !important;
+    grid: 1fr /1fr 1fr;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    margin:0;
+    align-items: center;
+}
+
+@media(max-width: 800px){
+
+    body>button{
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    body>h1{ 
+        font-size: 2rem;
+    }
+
+    #editor{
+        height: 40vh;
+    }
+
+    #editor:focus{
+        height: min-content;
+    }
+    #preview{
+        height: max-content;
+    }
+
+}
+
+@media(min-width: 800px){
+    
+
+    #preview:hover{
+        width: 85%;
+        height: 100%;
+    }
+
+
+    #preview{
+        width: 80% !important;
+        transition: none;
+        height: auto;
+    }
+
+    #editor:hover{
+        /* transform: translateY(-2%); */
+        transition: all 2s ease-in-out 1s;
+        height: 40vh;
+        width: 80%;
+    }
 }

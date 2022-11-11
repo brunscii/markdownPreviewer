@@ -20,12 +20,15 @@
 
 
     <h1>Markdown to HTML previwer</h1>
-    
+    <button id="orientation" type="button">Orientation<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+      </svg></button>
     <div class="dBox">
-
-        <label class="box-title" for="editor">Markdown</label>
-<!-- #region Markdown Preview---------------------------------------------------------------- -->
-        <textarea name="markdown-text" id="editor" cols="30" rows="50" spellcheck="false">
+        <div class="box">
+            <label class="box-title" for="editor">Markdown</label>
+            <!-- #region Markdown Preview---------------------------------------------------------------- -->
+            <textarea name="markdown-text" id="editor" cols="30" rows="50" spellcheck="false">
 # This is a H1
 ## This is a H2
 [this is a link to freeCodeCamp](https://freeCodeCamp.org)
@@ -39,23 +42,25 @@
 `inline-code`
 
 ```c++
-    int main(){
-        return 0;
-    }
+int main(){
+    return 0;
+}
 ```
 Here is a list
 1. This
 - is
 + a
 * **list**
-        </textarea>
-<!-- #end region Markdown Preview---------------------------------------------------------------- -->
-
-        <label class='box-title' for="preview">Preview</label>
-        <div name="preview" id="preview" ></div>    
-    </div>
-
-    
+            </textarea>
+        </div>
+            <!-- #end region Markdown Preview---------------------------------------------------------------- -->
+            <div class="box">
+                <label class='box-title' for="preview">Preview</label>
+                <div name="preview" id="preview" ></div>    
+            </div>
+        </div>
+        
+        
     
     
     
@@ -73,7 +78,15 @@ Here is a list
             gfm: true,
             breaks: true
         }
-        
+        $('#orientation').click(()=>{
+            $('.box').toggleClass('vertical-box')
+            $('#editor').toggleClass('vertical')
+            $('#preview').toggleClass('vertical')
+            $('.dBox').toggleClass('grid-2')
+            $('.dBox').toggleClass('block')
+            
+
+        })
         // DOMPurify.sanitize(marked.parse(`<img src="x" onerror="alert('not happening')">`));
         window.onload = ()=>{
             $('#preview')[0].innerHTML = DOMPurify.sanitize(marked.parse( $('#editor')[0].textContent,options ));
