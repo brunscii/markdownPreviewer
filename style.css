@@ -1,18 +1,31 @@
 body{
-    background: linear-gradient(rgba(51, 85, 85, 0.837), #05757f);
+    background: linear-gradient(rgba(12, 98, 98, 0.837), #05757f);
     color:#ccc;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     /* position: relative; */
 }
-
+/* important since we can have multiple h1's thanks to the MD conversion */
 body>h1{
     font-size: 3rem;
     text-align: center;
+    text-decoration: underline solid 2px;
+    text-underline-offset: 5px;
+    width:-moz-fit-content;
+    width:fit-content;
 }
 
 .box-title{
-    font-size: 1.7rem;;
+    font-size: 1.7rem;
+    
+    text-decoration: underline solid 1px;
+    text-underline-offset: 2px;
+    
 }
 
 .dBox{
@@ -21,6 +34,7 @@ body>h1{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 
 }
 
@@ -32,6 +46,7 @@ body>h1{
     color: inherit;
     border-radius: 20px;
     padding: .7rem;    
+    box-sizing: border-box;
     transition: height 2s ease-in-out 1s,
                 transform 2s ease-out 1s;
     
@@ -40,9 +55,10 @@ body>h1{
 #editor:hover{
     transform: translateY(-2%);
     /* transition: all ease 1s; */
-    transition: all 2s ease-in-out 2s;
+    transition: all 2s ease-in-out 1s;
     /* position: fixed; */
     height: 30vh;
+    width: 85%;
 }
 
 
@@ -51,12 +67,13 @@ body>h1{
 }
 
 #preview{
+    box-sizing: border-box;
     background-color: #012f33b4;
     /* height:fit-content; */
     resize: both;
     overflow:auto;
-    padding: 1rem;
-    border-radius: 1.5%;
+    padding: .5rem 2rem 2rem 3rem;
+    border-radius: 20px;
     /* border: 1px solid black; */
     width: 80%;
     height: 40vh;
